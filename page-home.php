@@ -40,10 +40,10 @@
               </div>
               <?php endwhile; ?>
             <?php endif; ?>
-            <p class="text-uppercase text-center text-muted"><a href="/type/status" title="All status updates">All Statuses</a></p>
+            <p class="text-uppercase text-center text-muted"><a href="/type/status" title="All status updates">All statuses</a></p>
           </div>
           <div class="col-md-4 blogposts">
-              <h3 class="">Recent Blog posts</h3>
+              <h3 class="">Recent blog posts</h3>
               <?php
               $recent_posts = new WP_Query( array(
                   'tax_query' => array(
@@ -75,10 +75,10 @@
             <?php endwhile; ?>
           <?php endif; ?>
 
-              <p class="text-uppercase text-center text-muted"><a href="/blog/?type=post" title="All blog posts">All Posts</a></p>
+              <p class="text-uppercase text-center text-muted"><a href="/blog/?type=post" title="All blog posts">All posts</a></p>
           </div>
           <div class="col-md-4 photos">
-            <h3 class="">A random photo</h3>
+            <h3 class="">A random image</h3>
 
             <?php
             // Added in September 2016
@@ -99,7 +99,7 @@
               </div>
             <?php endwhile; ?>
           <?php endif; ?>
-            <p class="text-uppercase text-center text-muted"><a href="/type/image" title="All photos">All Photos</a></p>
+            <p class="text-uppercase text-center text-muted"><a href="/type/image" title="All images">All images</a></p>
           </div>
       </div>
   </div>
