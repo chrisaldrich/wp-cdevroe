@@ -1,0 +1,44 @@
+<?php get_header(); ?>
+<section>
+      <div class="container">
+          <h2>Blog posts</h2>
+          <div class="row">
+              <div class="col-md-8">
+                <?php
+                if(get_query_var('type') == "post") {    global $my_post_formats_longname;   $args = array(          'tax_query' => array(
+                            array( 'taxonomy' => 'post_format',
+                                  'field' => 'slug',
+                                  'terms' => $my_post_formats_longname,
+                                  'operator' => 'NOT IN'
+                                  )
+                            )
+                    );
+                    query_posts( $args );
+                }
+                if ( have_posts() ) : ?>
+                  <?php while ( have_posts() ) : the_post(); ?>
+                  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <?php $format = get_post_format( $post->ID );
+                    if ( !$format || $format == 'audio' ) : ?>
+                      <h3><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                      <p class="text-uppercase text-muted"><?php echo get_the_date('F jS, Y'); ?></p>
+                      <?php the_excerpt(); ?>
+                      <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">Read more...</a></p>
+                    <?php else : ?>
+                      <?php the_content(); ?>
+                      <p class="text-uppercase text-muted"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo get_the_date('F jS, Y'); ?></a></p>
+                    <?php endif; ?>
+                  </article>
+                  <?php endwhile;
+                endif; ?>
+                <?php if ( get_previous_posts_link() || get_next_posts_link() ) : ?>
+                  <p class="text-uppercase text-center text-muted"><?php if ( get_previous_posts_link() ) : ?><?php echo get_previous_posts_link(); ?> | <?php endif; ?><?php if ( get_next_posts_link() ) : ?><?php echo get_next_posts_link(); ?><?php endif; ?></p>
+                <?php endif; ?>
+              </div>
+              <div class="sidebar col-md-4">
+                <?php get_sidebar(); ?>
+              </div>
+          </div>
+      </div>
+</section>
+<?php get_footer(); ?>
