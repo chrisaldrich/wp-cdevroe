@@ -5,9 +5,8 @@
       <div class="col-md-8">
         <article>
           <h2>This is not the page you're looking for</h2>
-    			<p>But you can talk to Kylo Ren about it...</p>
+    			<p><a href="/">Scram</a>, or you can talk to Kylo Ren about it...</p>
     			<p><img src="<?php echo get_template_directory_uri(); ?>/assets/images/kylo.jpeg"></p>
-    			<p>Or, go <a href="/">home</a>.</p>
         </article>
       </div>
       <div class="col-md-4 sidebar">
