@@ -22,6 +22,14 @@ if (have_posts()) :
                   <p class="published-on"><?php the_date('F jS, Y'); ?></p>
                   <?php the_content(); ?>
 
+                <?php elseif ( $format == 'status') : ?>
+
+                  <?php $content = get_the_content();
+                  $content .= '<span class="status-date"> - ' . get_the_date('g:ia \o\n F jS, Y') . '</span>';
+                  echo wpautop($content); ?>
+
+                  <p class="text-uppercase text-center text-muted"><a href="/type/status" title="All status updates">All statuses</a></p>
+
                 <?php else : ?>
 
                   <?php the_content(); ?>

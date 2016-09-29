@@ -35,8 +35,9 @@
 
             <?php while ( $recent_statuses->have_posts() ) : $recent_statuses->the_post(); ?>
               <div class="item">
-                  <?php the_content(); ?>
-                  <p class="text-uppercase text-muted"><a href="<?php the_permalink(); ?>" title="Permalink for this status update"><?php echo get_the_date('F jS, Y'); ?></a></p>
+                <?php $content = get_the_content();
+                $content .= ' - <a class="status-date" href="' . get_the_permalink() . '" title="' . the_title_attribute('','',false) . '">' . get_the_date('g:ia \o\n F jS, Y') . '</a>';
+                echo wpautop($content); ?>
               </div>
               <?php endwhile; ?>
             <?php endif; ?>

@@ -6,18 +6,23 @@
         <div class="col-md-8">
 						<?php if ( have_posts() ) : ?>
               <?php while ( have_posts() ) : the_post(); ?>
-              <article>
-                  <?php if ( $post->post_type == 'post' || $post->post_type == 'audio' ) : ?>
-                    <h3 class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                  <?php $format = get_post_format( $post->ID );
+                  if ( !$format || $format == 'audio' ) : ?>
+                    <h3><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <p class="text-uppercase text-muted"><?php echo get_the_date('F jS, Y'); ?></p>
                     <?php the_excerpt(); ?>
                     <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">Read more...</a></p>
+                  <?php elseif ( $format == 'status') : ?>
+                    <?php $content = get_the_content();
+                    $content .= ' - <a class="status-date" href="' . get_the_permalink() . '" title="' . the_title_attribute('','',false) . '">' . get_the_date('g:ia \o\n F jS, Y') . '</a>';
+                    echo wpautop($content); ?>
                   <?php else : ?>
                     <?php the_content(); ?>
+                    <p class="text-uppercase text-muted"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo get_the_date('F jS, Y'); ?></a></p>
                   <?php endif; ?>
-									<p class="text-uppercase text-muted text-primary"><a href="<?php the_permalink(); ?>" title="Permalink for this item"><?php echo get_the_date('F jS, Y'); ?></a></p>
-              </article>
+                </article>
 							<?php endwhile; ?>
-
 						<?php endif; ?>
 
             <?php if ( get_previous_posts_link() || get_next_posts_link() ) : ?>

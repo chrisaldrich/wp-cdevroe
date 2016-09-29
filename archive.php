@@ -13,6 +13,10 @@
                       <p class="text-uppercase text-muted"><?php echo get_the_date('F jS, Y'); ?></p>
                       <?php the_excerpt(); ?>
                       <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">Read more...</a></p>
+                    <?php elseif ( $format == 'status') : ?>
+                      <?php $content = get_the_content();
+                      $content .= ' - <a class="status-date" href="' . get_the_permalink() . '" title="' . the_title_attribute('','',false) . '">' . get_the_date('g:ia \o\n F jS, Y') . '</a>';
+                      echo wpautop($content); ?>
                     <?php else : ?>
                       <?php the_content(); ?>
                       <p class="text-uppercase text-muted"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo get_the_date('F jS, Y'); ?></a></p>
