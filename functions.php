@@ -5,6 +5,8 @@ function theme_setup(){
 	add_theme_support( 'post-thumbnails' , array('post', 'page') );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'html5' );
+	add_theme_support( 'search-form' );
 	add_theme_support( 'post-formats', $my_post_formats );
 }
 add_action( 'init', 'theme_setup' );

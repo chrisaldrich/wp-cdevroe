@@ -194,7 +194,8 @@ p.text-muted { font-size: 14px; }
 }
 
 .sidebar { margin-top: 60px;}
-   .sidebar .sidebar-section { margin-bottom: 30px; }
+  .sidebar img.avatar { max-width: 75%; }
+  .sidebar .sidebar-section { font-size: 14px; font-weight: 400; margin-bottom: 30px; }
 
 
 
@@ -212,15 +213,13 @@ article.post_format-post-format-image { text-align: center; }
 ul.filterposts { list-style: none; padding: 0px 0px 0px 15px; margin-bottom: 20px; }
   ul.filterposts li { height: 25px; }
 
-#searchform label { display: none; }
+#searchform label, .search-form span { display: none; }
 
 @media (min-width:768px) {
   .site-footer .social-icons{
     text-align:right;
   }
 }
-
-.sidebar img.avatar { max-width: 50%; }
 
 /* pings stuff */
 .reply { display: none; }

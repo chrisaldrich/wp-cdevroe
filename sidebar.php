@@ -5,34 +5,33 @@
 </div>
 
 <div class="sidebar-section">
-  <h4>Search</h4>
   <?php get_search_form( true ); ?>
 </div>
 
 <?php if ( !is_page() ) : ?>
 <div class="sidebar-section">
-  <h4>Filter posts:</h4>
-  <p><a href="/blog">All</a>, <a href="/blog?type=post">Posts</a>, <a href="/type/status">Statuses</a>, <a href="/type/image">Images</a>, <a href="/type/audio">Audio</a></p>
+  <p><strong>Filter posts:</strong> <a href="/blog">All</a>, <a href="/blog?type=post">Posts</a>, <a href="/type/status">Statuses</a>, <a href="/type/image">Images</a>, <a href="/type/audio">Audio</a></p>
 </div>
 <?php endif; ?>
 
 <div class="sidebar-section">
   <h4>Ongoing updates</h4>
   <ul>
-    <li><a href="http://cdevroe.com/2016/09/25/hiking-every-trail-in-lackawanna-state-park/">I'm hiking every trail in Lackawanna State Park</a></li>
-    <li><a href="http://cdevroe.com/tag/observations/">I write observation posts</a></li>
-    <li><a href="http://cdevroe.com/tag/work/">I sometimes write about work</a></li>
+    <li><a href="http://cdevroe.com/2016/09/25/hiking-every-trail-in-lackawanna-state-park/" title="Hiking every trail in Lackawanna State Park">I'm hiking every trail in Lackawanna State Park</a></li>
+    <li><a href="http://cdevroe.com/tag/what-i-saw/" title="What I saw this week series of posts">I share links every Friday</a></li>
+    <li><a href="http://cdevroe.com/tag/observations/" title="My observations on things">I write observation posts</a></li>
+    <li><a href="http://cdevroe.com/type/image/">I share a new image every morning at 9am</a></li>
   </ul>
 </div>
 
+<?php $recommended_posts = new WP_Query( array( 'tag' => 'recommended', 'posts_per_page' => 6 ) );
+if ( $recommended_posts->have_posts() ) : ?>
 <div class="sidebar-section">
   <h4>Recommended posts</h4>
   <ul>
-    <li><a href="http://cdevroe.com/2014/08/18/congratulate-before-you-ask/">Congratulate before you ask</a></li>
-    <li><a href="http://cdevroe.com/2013/11/20/why-you-should-applaud-when-people-make/">Why you should applaud when people make things</a></li>
-    <li><a href="http://cdevroe.com/2014/03/26/you-should-go-to-meetups/">You should go to meetups</a></li>
-    <li><a href="http://cdevroe.com/2016/08/02/tips-for-new-drone-owners/">Tips for new drone owners</a></li>
-    <li><a href="http://cdevroe.com/2016/09/29/creating-your-own-hiking-checklist/">Creating your own hiking checklist</a></li>
-    <li><a href="http://cdevroe.com/2012/08/22/how-to-tear-down-the-walls-of/">How to tear down the walls of your echo chamber</a></li>
+    <?php while ( $recommended_posts->have_posts() ) : $recommended_posts->the_post(); ?>
+      <li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+    <?php endwhile; ?>
   </ul>
 </div>
+<?php endif; ?>
