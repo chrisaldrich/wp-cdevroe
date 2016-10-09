@@ -11,8 +11,10 @@
                     if ( !$format || $format == 'audio' ) : ?>
                       <h3><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <p class="text-uppercase text-muted"><?php echo get_the_date('F jS, Y'); ?></p>
-                      <?php the_excerpt(); ?>
-                      <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">Read more...</a></p>
+                      <?php if ( !$format ) :
+                        the_excerpt();
+                      endif; ?>
+                      <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php if ( !$format ) : ?>Read more<?php else : ?>Listen<?php endif;?>...</a></p>
                     <?php elseif ( $format == 'status') : ?>
                       <?php $content = get_the_content();
                       $content .= ' - <a class="status-date" href="' . get_the_permalink() . '" title="' . the_title_attribute('','',false) . '">' . get_the_date('g:ia \o\n F jS, Y') . '</a>';
@@ -28,7 +30,7 @@
                   <p class="text-uppercase text-center text-muted"><?php if ( get_previous_posts_link() ) : ?><?php echo get_previous_posts_link(); ?><?php endif; ?> | <?php if ( get_next_posts_link() ) : ?><?php echo get_next_posts_link(); ?><?php endif; ?></p>
                 <?php endif; ?>
               </div>
-              <div class="col-md-4">
+              <div class="sidebar col-md-4">
                 <?php get_sidebar(); ?>
               </div>
           </div>

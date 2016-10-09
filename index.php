@@ -22,8 +22,10 @@
                     if ( !$format || $format == 'audio' ) : ?>
                       <h3><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <p class="text-uppercase text-muted"><?php echo get_the_date('F jS, Y'); ?></p>
-                      <?php the_excerpt(); ?>
-                      <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">Read more...</a></p>
+                      <?php if ( !$format ) :
+                        the_excerpt();
+                      endif; ?>
+                      <p class="text-primary"><a title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php if ( !$format ) : ?>Read more<?php else : ?>Listen<?php endif;?>...</a></p>
                     <?php elseif ( $format == 'status') : ?>
                       <?php $content = get_the_content();
                       $content .= ' - <a class="status-date" href="' . get_the_permalink() . '" title="' . the_title_attribute('','',false) . '">' . get_the_date('g:ia \o\n F jS, Y') . '</a>';
