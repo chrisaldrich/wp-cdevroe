@@ -227,3 +227,5 @@ ul.filterposts { list-style: none; padding: 0px 0px 0px 15px; margin-bottom: 20p
 .emojiemo-add, .emojiemo-existing { height: 25px !important; }
 
 .fa { line-height: inherit; }
+
+.p-author { visibility: hidden; }
