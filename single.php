@@ -17,7 +17,7 @@ if (have_posts()) :
                 <?php if ( !$format || $format == 'audio' ) : ?>
 
                   <h2 class="p-name"><?php the_title(); ?></h2>
-                  <p class="published-on"><time class="dt-published" datetime="<?php the_date('Y-m-d H:i:s'); ?>"><?php the_date('F jS, Y'); ?></time></p>
+                  <p class="published-on"><time class="dt-published" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>"><?php echo get_the_date('F jS, Y'); ?></time></p>
                   <div class="e-content">
                     <?php the_content(); ?>
                   </div>
@@ -32,7 +32,7 @@ if (have_posts()) :
                 <?php else : ?>
 
                   <?php the_content(); ?>
-                  <p class="published-on">Published on <?php the_date('F jS, Y'); ?></p>
+                  <p class="published-on">Published on <?php echo get_the_date('F jS, Y'); ?></p>
 
                 <?php endif; ?>
 
