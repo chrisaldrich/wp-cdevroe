@@ -14,18 +14,17 @@ if (have_posts()) :
          <div class="col-md-<?php echo $cols; ?>">
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'h-entry' ); ?>>
 
-
                 <?php if ( !$format || $format == 'audio' ) : ?>
 
                   <h2 class="p-name"><?php the_title(); ?></h2>
-                  <?php do_action("emojiemo_render"); ?>
                   <p class="published-on"><time class="dt-published" datetime="<?php the_date('Y-m-d H:i:s'); ?>"><?php the_date('F jS, Y'); ?></time></p>
                   <div class="e-content">
                     <?php the_content(); ?>
                   </div>
 
                 <?php elseif ( $format == 'status') :
-                    echo '<div class="p-name e-content">' . wpautop(get_the_content()) . '</div><time class="dt-published" datetime="'.get_the_date('Y-m-d H:i:s').'"><span class="status-date"> - ' . get_the_date('g:ia \o\n F jS, Y') . '</span></time>';
+                    echo '<div class="p-name e-content">' . wpautop(get_the_content()) . '</div>';
+                    echo '<time class="dt-published" datetime="'.get_the_date('Y-m-d H:i:s').'"><span class="status-date">' . get_the_date('g:ia \o\n F jS, Y') . '</span></time>';
                 ?>
 
                   <p class="text-uppercase text-center text-muted"><a href="/type/status" title="All status updates">All statuses</a></p>

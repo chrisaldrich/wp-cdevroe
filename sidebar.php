@@ -1,7 +1,7 @@
 <div class="sidebar-section">
   <h4>About me</h4>
   <p><img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdevroe.jpg" alt="Colin Devroe's avatar is a photo of him, from overhead, in a parking garage in Scranton, PA"></p>
-  <p>I'm <a href="mailto:colin@cdevroe.com" title="Send me an email">Colin Devroe</a> and this is my blog. Thanks for stopping by. You can read more about me on <a href="/about" title="About Colin Devroe">my about page</a> and I'm <a href="/hire" title="Find out what Colin can be hired for">available for hire</a> if you need something built on the web.<p>
+  <p>I'm <a href="mailto:colin@cdevroe.com" title="Send me an email" class="email fn p-name u-email">Colin Devroe</a> and this is my blog. Thanks for stopping by. You can read more about me on <a href="/about" title="About Colin Devroe" rel="me">my about page</a> and I'm <a href="/hire" title="Find out what Colin can be hired for">available for hire</a> if you need something built on the web.<p>
 </div>
 
 <div class="sidebar-section">
