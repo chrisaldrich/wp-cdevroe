@@ -83,7 +83,7 @@
 
             <?php
             // Added in September 2016
-            $random_number = rand(1,25);
+            $random_number = rand(1,35);
             $recent_photos = new WP_Query( array ('post_type' => 'post',
                                                     'tax_query' => array(
                                                                   'relation' => 'AND',
