@@ -24,7 +24,7 @@
   </ul>
 </div>
 
-<?php $recommended_posts = new WP_Query( array( 'tag' => 'recommended', 'posts_per_page' => 6 ) );
+<?php $recommended_posts = new WP_Query( array( 'tag' => 'recommended', 'posts_per_page' => 12 ) );
 if ( $recommended_posts->have_posts() ) : ?>
 <div class="sidebar-section">
   <h4>Recommended posts</h4>
