@@ -5,9 +5,11 @@ if (have_posts()) :
  <div class="container">
      <div class="row">
          <div class="col-md-8">
-              <article>
-                <h2><?php the_title(); ?></h2>
-								<?php the_content(); ?>
+              <article id="page-<?php the_ID(); ?>" <?php post_class( 'h-entry' ); ?>>
+                <h2 class="p-name"><?php the_title(); ?></h2>
+                <div class="e-content">
+								  <?php the_content(); ?>
+                </div>
               </article>
           </div>
           <div class="col-md-4 sidebar">

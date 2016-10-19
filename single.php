@@ -36,12 +36,12 @@ if (have_posts()) :
 
                 <?php endif; ?>
 
-                <?php if ( $category_list = get_the_term_list( get_the_id(), 'category', '', ', ', '') ) { ?>
-        				<!--	<p><strong>In:</strong> <?php echo $category_list; ?></p> -->
-        				<?php } // end category list ?>
+                <?php// if ( $category_list = get_the_term_list( get_the_id(), 'category', '', ', ', '') ) { ?>
+        				<!--	<p><strong>In:</strong> <?php// echo $category_list; ?></p> -->
+        				<?php// } // end category list ?>
 
                 <?php if ( $tag_list = get_the_term_list( get_the_id(), 'post_tag', ' #', ', #', '') ) { ?>
-      					  <p class="published-on"><?php echo $tag_list; ?></p>
+      					  <p><?php echo $tag_list; ?></p>
       				  <?php } // end tag list ?>
               </article>
 
