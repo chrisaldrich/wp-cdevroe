@@ -1,7 +1,7 @@
 <div class="sidebar-section">
   <h4>About me</h4>
-  <p><img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdevroe.jpg" alt="Colin Devroe's avatar is a photo of him, from overhead, in a parking garage in Scranton, PA"></p>
-  <p>I'm <a href="mailto:colin@cdevroe.com" title="Send me an email" class="email fn p-name u-email">Colin Devroe</a> and this is my blog. Thanks for stopping by. You can read more about me on <a href="/about" title="About Colin Devroe" rel="me">my about page</a> and I'm <a href="/hire" title="Find out what Colin can be hired for">available for hire</a> if you need something built on the web.<p>
+  <p><img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdevroe500.jpg" alt="Colin Devroe's avatar is a selfie photo of him in the forest."></p>
+  <p>I'm <a href="mailto:colin@cdevroe.com" title="Send me an email" class="email fn p-name u-email">Colin Devroe</a>, and this is my personal web site. You can read more about me on <a href="/about" title="About Colin Devroe" rel="me">my about page</a>.<p>
 </div>
 
 <div class="sidebar-section">
@@ -35,3 +35,7 @@ if ( $recommended_posts->have_posts() ) : ?>
   </ul>
 </div>
 <?php endif; ?>
+
+<p class="text-center social-icons"><a href="mailto:colin@cdevroe.com" title="Contact me via email" rel="me"><i class="fa fa-envelope-o"></i></a> <a href="http://twitter.com/cdevroe" title="Follow me on Twitter" rel="me"><i class="fa fa-twitter"></i></a>
+  <a href="http://instagram.com/cdevroe" title="Follow me on Instagram" rel="me"><i class="fa fa-instagram"></i></a>
+  <a href="http://github.com/cdevroe" title="Follow me on Github" rel="me"><i class="fa fa-github"></i></a></p>

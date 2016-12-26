@@ -19,7 +19,7 @@ foreach ($my_post_formats as $shortname) {
 function theme_enqueue_style() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', false );
   wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css', false );
-	wp_enqueue_style( 'theme_styles', get_template_directory_uri() . '/assets/css/user.css', false, '1.0' );
+	wp_enqueue_style( 'theme_styles', get_template_directory_uri() . '/assets/css/user.css', false, '1.1' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_style' );
 

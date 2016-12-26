@@ -8,9 +8,11 @@
   <div class="container">
       <div class="row">
           <div class="col-md-12 get-it">
-              <h1 class="text-center">Colin Devroe</h1>
-              <p class="text-center">Reverse Engineer. Blogger. Photographer. Drone pilot. Hiker. Kayaker.</p>
-              <p class="text-center"><a class="btn btn-primary btn-lg" role="button" href="mailto:colin@cdevroe.com" title="Contact me via email">colin @ cdevroe.com</a><a class="btn btn-success btn-lg" role="button" href="/hire">Hire Me</a></p>
+              <p class="text-center"><img class="img-circle avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdevroe500.jpg" alt="Colin Devroe's avatar is a selfie photo of him in the forest."></p>
+              <p class="text-center">Reverse Engineer. Blogger. Investor. Photographer. Hiker. Kayaker.</p>
+              <p class="text-center social-icons"><a href="mailto:colin@cdevroe.com" title="Contact me via email" rel="me"><i class="fa fa-envelope-o"></i></a> <a href="http://twitter.com/cdevroe" title="Follow me on Twitter" rel="me"><i class="fa fa-twitter"></i></a>
+              <a href="http://instagram.com/cdevroe" title="Follow me on Instagram" rel="me"><i class="fa fa-instagram"></i></a>
+              <a href="http://github.com/cdevroe" title="Follow me on Github" rel="me"><i class="fa fa-github"></i></a></p>
           </div>
       </div>
   </div>
@@ -105,7 +107,7 @@
       </div>
   </div>
 </section>
-<section class="features">
+<!-- <section class="features">
   <div class="container">
       <div class="row">
           <div class="col-md-6">
@@ -126,5 +128,5 @@
           </div>
       </div>
   </div>
-</section>
+</section> -->
 <?php get_footer(); ?>

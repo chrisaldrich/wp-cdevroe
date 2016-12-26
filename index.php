@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section>
       <div class="container">
-          <h2>Blog posts</h2>
+          <h2>Recently posted</h2>
           <div class="row">
               <div class="col-md-8">
                 <?php

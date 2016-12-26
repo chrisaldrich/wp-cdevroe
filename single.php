@@ -41,7 +41,7 @@ if (have_posts()) :
         				<?php// } // end category list ?>
 
                 <?php if ( $tag_list = get_the_term_list( get_the_id(), 'post_tag', ' #', ', #', '') ) { ?>
-      					  <p><?php echo $tag_list; ?></p>
+      					  <p class="taglist"><?php echo $tag_list; ?></p>
       				  <?php } // end tag list ?>
               </article>
 
