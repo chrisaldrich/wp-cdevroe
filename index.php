@@ -9,6 +9,9 @@
     <?php if ( is_front_page() ) : ?>
       <h2>Recent posts</h2>
     <?php endif; ?>
+    <?php if ( is_tag() ) { ?>
+      <h2>Posts tagged <?php single_tag_title(); ?></h2>
+    <?php } ?>
 
     <?php
     // This allows me to show "Posts" on the index page by themselves

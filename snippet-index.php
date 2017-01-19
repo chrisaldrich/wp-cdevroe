@@ -5,6 +5,9 @@
     <div class="e-content">
       <?php the_content(); ?>
     </div>
+    <?php if ( $tag_list = get_the_term_list( get_the_id(), 'post_tag', ' #', ', #', '') ) { ?>
+      <p class="taglist"><?php echo $tag_list; ?></p>
+    <?php } ?>
   <?php else : ?>
     <div class="p-summary">
       <?php the_excerpt(); ?>
