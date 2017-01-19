@@ -24,8 +24,7 @@
 		<div class="container">
 
 			<div class="row header">
-				<div class="col-sm ">
-					<img class="float-left avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdevroe500.jpg" alt="Colin Devroe's avatar is a selfie photo of him in the forest."/>
+				<div class="col-sm">
 					<h1>Colin Devroe</h1>
 					<p>Senior Vice President <a href="http://condronmedia.com/">Condron Media</a></p>
 					<p>Reverse engineer. Blogger. Investor. Photographer Hiker. Kayaker.</p>
