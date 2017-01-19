@@ -2,5 +2,5 @@
   <div class="p-name e-content">
     <?php the_content(); ?>
   </div>
-  <p class="text-uppercase text-muted"><a class="u-url" title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo get_the_date('F jS, Y'); ?></a></p>
+  <p><a class="u-url" title="Permalink to <?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo get_the_date('F jS, Y'); ?></a></p>
 </article>

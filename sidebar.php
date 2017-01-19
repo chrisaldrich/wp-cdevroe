@@ -2,11 +2,16 @@
   <?php get_search_form( true ); ?>
 </div>
 
-<?php if ( !is_page() ) : ?>
 <div class="sidebar-section">
-  <p><strong>Filter posts:</strong> <a href="/blog">All</a>, <a href="/blog?type=post">Posts</a>, <a href="/type/status">Statuses</a>, <a href="/type/image">Images</a>, <a href="/type/audio">Audio</a></p>
+  <h4>Post formats</h4>
+  <ul>
+    <li><a href="/">All</a></li>
+    <li><a href="/?type=post">Posts</a></li>
+    <li><a href="/type/status">Statuses</a></li>
+    <li><a href="/type/image">Images</a></li>
+    <li><a href="/type/audio">Audio</a></li>
+  </ul>
 </div>
-<?php endif; ?>
 
 <div class="sidebar-section">
   <h4>Ongoing updates</h4>
