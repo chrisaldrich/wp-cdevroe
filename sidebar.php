@@ -13,7 +13,7 @@
   </ul>
 </div>
 
-<div class="sidebar-section">
+<div class="sidebar-section links">
   <h4>Ongoing updates</h4>
   <ul>
     <li><a href="http://cdevroe.com/tag/what-i-saw/" title="What I saw this week series of posts">I share links every Friday</a></li>
@@ -24,7 +24,7 @@
 
 <?php $recommended_posts = new WP_Query( array( 'tag' => 'recommended', 'posts_per_page' => 12 ) );
 if ( $recommended_posts->have_posts() ) : ?>
-<div class="sidebar-section">
+<div class="sidebar-section links">
   <h4>Recommended posts</h4>
   <ul>
     <?php while ( $recommended_posts->have_posts() ) : $recommended_posts->the_post(); ?>

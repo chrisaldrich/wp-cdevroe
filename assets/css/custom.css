@@ -80,6 +80,11 @@ article.format-status, article.format-image {
     list-style: none;
     padding-left: 0px;
   }
+
+  .sidebar-section.links ul li {
+    margin-bottom: 10px;
+  }
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
   .header h1 {
