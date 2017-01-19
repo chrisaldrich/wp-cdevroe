@@ -17,16 +17,13 @@ foreach ($my_post_formats as $shortname) {
 }
 
 function theme_enqueue_style() {
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', false );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap4.min.css', false, '0.1.0' );
   wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css', false );
-	wp_enqueue_style( 'theme_styles', get_template_directory_uri() . '/assets/css/user.css', false, '1.2' );
+	wp_enqueue_style( 'theme_styles', get_template_directory_uri() . '/assets/css/custom.css', false, '1.2' );
+
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap4.min.js', array('jquery'), '0.1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_style' );
-
-function theme_enqueue_script() {
-  	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery') );
-}
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_script' );
 
 function theme_my_queryvars( $qvars ) {
 	$qvars[] = 'type';

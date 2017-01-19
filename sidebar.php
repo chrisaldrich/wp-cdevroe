@@ -1,18 +1,4 @@
 <div class="sidebar-section">
-  <h4>About me</h4>
-  <p><img class="avatar" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdevroe500.jpg" alt="Colin Devroe's avatar is a selfie photo of him in the forest."></p>
-  <p>I'm <a href="mailto:colin@cdevroe.com" title="Send me an email" class="email fn p-name u-email">Colin Devroe</a>, a reverse engineer, blogger, investor, photographer, hiker, and kayaker. You can read more about me on <a href="/about" title="About Colin Devroe" rel="me">my about page</a>.<p>
-</div>
-<div class="sidebar-section">
-<p class="text-center social-icons">
-  <a href="mailto:colin@cdevroe.com" title="Contact me via email" rel="me"><i class="fa fa-envelope-o"></i></a>
-  <a href="http://twitter.com/cdevroe" title="Follow me on Twitter" rel="me"><i class="fa fa-twitter"></i></a>
-  <a href="http://instagram.com/cdevroe" title="Follow me on Instagram" rel="me"><i class="fa fa-instagram"></i></a>
-  <a href="http://facebook.com/cdevroe" title="Friend me on Facebook" rel="me"><i class="fa fa-facebook"></i></a>
-  <a href="http://linkedin.com/cdevroe" title="Connect with me on LinkedIn" rel="me"><i class="fa fa-linkedin"></i></a>
-  <a href="http://github.com/cdevroe" title="Follow me on Github" rel="me"><i class="fa fa-github"></i></a></p>
-</div>
-<div class="sidebar-section">
   <?php get_search_form( true ); ?>
 </div>
 
