@@ -65,6 +65,10 @@ article {
     color: #666666;
   }
 
+  .alsoon {
+    font-size: 0.8rem;
+  }
+
 /* Statuses */
 article.format-status, article.format-image {
   padding: 30px;

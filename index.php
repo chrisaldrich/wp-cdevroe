@@ -31,9 +31,12 @@
       while ( have_posts() ) : the_post();
         get_template_part( 'snippet-index', get_post_format() );
 
-        if ( is_single() )
+        if ( is_single() ) :
+          echo '<div class="alsoon">';
           echo show_syndication_links( $post->ID );
-
+          echo '</div>';
+        endif;
+        
         comments_template( '', true );
       endwhile;
     else :
