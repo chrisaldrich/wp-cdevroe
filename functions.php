@@ -31,4 +31,35 @@ return $qvars;
 }
 add_filter('query_vars', 'theme_my_queryvars' );
 
+function show_syndication_links( $post_ID ) {
+	if ( empty($post_ID) ) return;
+
+	if ( function_exists('get_syndication_links') ) : // The syndication links plugin is activated
+
+		// Retrieve syndication links
+		$syndication_links = Syn_Meta::get_syndication_links_data( $post_ID );
+
+		if ( !empty($syndication_links) ) : // If syndication links are found for this post
+
+			$link_list = '<p>Also on ';
+			foreach ( $syndication_links as $url ) {
+				if ( empty( $url ) || ! is_string( $url ) ) { continue; }
+
+				$domain =       Syn_Meta::extract_domain_name( $url );
+				$name =         ucfirst(str_replace('.com','',$domain));
+
+				$link_list .= sprintf( '<a aria-label="%1$s" class="syn-link u-syndication" href="%2$s" rel="syndication" title="This post is also published to %1$s">%1$s</a>, ', $name, esc_url( $url ) );
+			}
+
+			$link_list .= '</p>';
+		else :
+			return; // No links found
+		endif;
+	else :
+		return; // Syndication links plugin not activated
+	endif;
+
+	return $link_list;
+}
+
 ?>

@@ -31,6 +31,9 @@
       while ( have_posts() ) : the_post();
         get_template_part( 'snippet-index', get_post_format() );
 
+        if ( is_single() )
+          echo show_syndication_links( $post->ID );
+
         comments_template( '', true );
       endwhile;
     else :
