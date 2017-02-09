@@ -17,7 +17,11 @@
     // This allows me to show "Posts" on the index page by themselves
     if(get_query_var('type') == "post") {
       global $my_post_formats_longname;
-      $args = array('tax_query' => array(
+
+      // If current page not provided, set to 1
+      $current_page = ( empty($wp->query_vars['paged']) ) ? 1 : $wp->query_vars['paged'];
+
+      $args = array('paged' => $current_page, 'tax_query' => array(
                 array( 'taxonomy' => 'post_format',
                       'field' => 'slug',
                       'terms' => $my_post_formats_longname,
@@ -36,7 +40,7 @@
           echo show_syndication_links( $post->ID );
           echo '</div>';
         endif;
-        
+
         comments_template( '', true );
       endwhile;
     else :

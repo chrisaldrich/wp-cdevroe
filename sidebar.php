@@ -5,11 +5,11 @@
 <div class="sidebar-section">
   <h4>Post formats</h4>
   <ul>
-    <li><a href="/">All</a></li>
-    <li><a href="/?type=post">Posts</a></li>
-    <li><a href="/type/status">Statuses</a></li>
-    <li><a href="/type/image">Images</a></li>
-    <li><a href="/type/audio">Audio</a></li>
+    <li><a href="/" title="Show all post formats">All</a></li>
+    <li><a href="/type/post" title="Filter by all posts">Posts</a></li>
+    <li><a href="/type/status" title="Filter by all statuses">Statuses</a></li>
+    <li><a href="/type/image" title="Filter by all images">Images</a></li>
+    <li><a href="/type/audio" title="Filter by all audio">Audio</a></li>
   </ul>
 </div>
 
